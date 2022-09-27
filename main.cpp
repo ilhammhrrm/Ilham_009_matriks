@@ -6,8 +6,8 @@ int main ()
 {
     int i, j, m, n, matriksA[10][10], matriksB[10][10], hasil[10][10], pilihan;
 
-    cout << "\nAda 3 Operasi Aritmatika Matriks" << endl;
-    cout << "\t1. Penjumlahan\n\t2. Pengurangan\n\t3. Perkalian"
+    cout << "\ Operasi Aritmatika Matriks" << endl;
+    cout << "\t1. Penjumlahan\n\t2. Pengurangan\n\t3. Perkalian\n\t4. Transpose"
     << endl;
     cout << "Tentukan Pilihan Anda : ";
     cin >> pilihan;
@@ -17,51 +17,83 @@ int main ()
     cout << "Masukkan Jumlah Kolom Matriks: ";
     cin >> n;
 
-    cout << "Masukkan elemen Matriks A: \n";
-    for(i=0;i<m;i++)
+    if(pilihan==4)
     {
-        for(j=0;j<n;j++)
+        cout << "Masukkan elemen Matriks A: \n";
+        for(i=0;i<m;i++)
         {
-            cin >> matriksA[i][j];
+            for(j=0;j<n;j++)
+            {
+                cin >> matriksA[i][j];
+            }
         }
     }
-    cout << "Masukkan elemen Matriks B: \n";
-    for(i=0;i<m;i++)
+    else
     {
-        for(j=0;j<n;j++)
+        cout << "Masukkan elemen Matriks A: \n";
+        for(i=0;i<m;i++)
         {
-            cin >> matriksB[i][j];
+            for(j=0;j<n;j++)
+            {
+                cin >> matriksA[i][j];
+            }
+        }
+        cout << "Masukkan elemen Matriks B: \n";
+        for(i=0;i<m;i++)
+        {
+            for(j=0;j<n;j++)
+            {
+                cin >> matriksB[i][j];
+            }
         }
     }
-
+    
     if(pilihan==1)
-    cout << "hasil penjumlahan Matriks: \n";
-    for(i=0;i<m;i++)
     {
-        for(j=0;j<n;j++)
+        cout << "hasil penjumlahan Matriks: \n";
+        for(i=0;i<m;i++)
         {
-            hasil[i][j]=matriksA[i][j]+matriksB[i][j];
-            cout << hasil[i][j] << "\t";
+            for(j=0;j<n;j++)
+            {
+                hasil[i][j]=matriksA[i][j]+matriksB[i][j];
+                cout << hasil[i][j] << "\t";
+            }
         }
     }
     else if(pilihan==2)
-    cout << "hasil pengurangan Matriks: \n";
-    for(i=0;i<m;i++)
     {
-        for(j=0;j<n;j++)
+        cout << "hasil pengurangan Matriks: \n";
+        for(i=0;i<m;i++)
         {
-            hasil[i][j]=matriksA[i][j]-matriksB[i][j];
-            cout << hasil[i][j] << "\t";
+            for(j=0;j<n;j++)
+            {
+                hasil[i][j]=matriksA[i][j]-matriksB[i][j];
+                cout << hasil[i][j] << "\t";
+            }
         }
     }
     else if(pilihan==3)
-    cout << "hasil perkalian Matriks: \n";
-    for(i=0;i<m;i++)
     {
-        for(j=0;j<n;j++)
+        cout << "hasil perkalian Matriks: \n";
+        for(i=0;i<m;i++)
         {
-            hasil[i][j]=matriksA[i][j]*matriksB[i][j];
-            cout << hasil[i][j] << "\t";
+            for(j=0;j<n;j++)
+            {
+                hasil[i][j]=matriksA[i][j]*matriksB[i][j];
+                cout << hasil[i][j] << "\t";
+            }
+        }
+    }
+    else if(pilihan==4)
+    {
+        cout << "hasil Transpose Matriks: \n";
+        for(i=0;i<m;i++)
+        {
+            for(j=0;j<n;j++)
+            {
+                hasil[i][j]=matriksA[j][i];
+                cout << hasil[i][j] << "\t";
+            }
         }
     }
     return 0;
